@@ -1,0 +1,1527 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "HomeScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 1,
+            "Width": 240,
+            "Height": 320,
+            "Color": {
+              "Red": 87,
+              "Green": 64,
+              "Blue": 124
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 64,
+            "Y": 16,
+            "Width": 112,
+            "Height": 41,
+            "TextId": "__SingleUse_PWYS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 84,
+            "Y": 64,
+            "Width": 72,
+            "Height": 12,
+            "TextId": "__SingleUse_VNMN",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "WideTextAction": 1
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "PlayButton",
+            "X": 96,
+            "Y": 136,
+            "Width": 50,
+            "Height": 50,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "IconReleased": "__generated\\icon_theme_images_navigation_arrow_right_50_50_E8F6FB.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_all_50_50_E8F6FB.svg.png"
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 50,
+                "Height": 50,
+                "ColorReleased": {
+                  "Red": 52,
+                  "Green": 52,
+                  "Blue": 62
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorBorderReleased": {
+                  "Red": 216,
+                  "Green": 224,
+                  "Blue": 232
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "HighScoreButton",
+            "X": 61,
+            "Y": 199,
+            "Width": 120,
+            "Height": 50,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 15,
+                "TextId": "__SingleUse_U7XL",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                }
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 120,
+                "Height": 50,
+                "LockToFlexButtonSize": true,
+                "ColorReleased": {
+                  "Red": 52,
+                  "Green": 52,
+                  "Blue": 62
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "HighestScorecontainer",
+            "X": -5,
+            "Y": 89,
+            "Width": 245,
+            "Height": 169,
+            "Visible": false,
+            "Components": [
+              {
+                "Type": "Image",
+                "Name": "image1",
+                "X": 19,
+                "Y": 11,
+                "Width": 214,
+                "Height": 150,
+                "RelativeFilename": "__generated\\alternate_theme_images_containers_small_wide_outlined_light.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "HighScoreText",
+                "X": 81,
+                "Y": 29,
+                "Width": 91,
+                "Height": 18,
+                "TextId": "__SingleUse_FWO1",
+                "TextRotation": "0",
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "ScoreText",
+                "X": 44,
+                "Y": 72,
+                "Width": 165,
+                "Height": 32,
+                "TextId": "__SingleUse_M341",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "UseBuffer": true,
+                  "BufferSize": 16
+                }
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "CloseButton",
+                "X": 107,
+                "Y": 117,
+                "Width": 36,
+                "Height": 36,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 1,
+                    "Y": 1,
+                    "IconReleased": "__generated\\icon_theme_images_navigation_close_36_36_000405.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_action_done_36_36_E8F6FB.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\micro_outline_disabled.json",
+                    "ImageReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_disabled.png",
+                    "ImagePressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_disabled.png"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Click_HighScore_Button",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "HighScoreButton"
+            },
+            "Action": {
+              "Type": "ActionShow",
+              "ActionComponent": "HighestScorecontainer"
+            }
+          },
+          {
+            "InteractionName": "Click_Play_Button",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "PlayButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "PlayScreen"
+            }
+          },
+          {
+            "InteractionName": "Click_Close_Button",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "CloseButton"
+            },
+            "Action": {
+              "Type": "ActionHide",
+              "ActionComponent": "HighestScorecontainer"
+            }
+          },
+          {
+            "InteractionName": "UpdateHighScore",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "HighScoreButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "getHighScore"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "PlayScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 240,
+            "Height": 320,
+            "Color": {
+              "Red": 87,
+              "Green": 64,
+              "Blue": 124
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 78,
+            "Y": 10,
+            "Width": 84,
+            "Height": 30,
+            "TextId": "__SingleUse_1H66",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Container",
+            "Name": "container1",
+            "X": 11,
+            "Y": 95,
+            "Width": 215,
+            "Height": 215,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "container44",
+                "X": 165,
+                "Y": 165,
+                "Width": 50,
+                "Height": 50,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "gridbox44",
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea44",
+                    "Width": 50,
+                    "Height": 50,
+                    "TextId": "__SingleUse_5JXP",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "LineSpacing": -12,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container43",
+                "X": 110,
+                "Y": 165,
+                "Width": 50,
+                "Height": 50,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "gridbox43",
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea43",
+                    "Width": 50,
+                    "Height": 50,
+                    "TextId": "__SingleUse_SW7F",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "LineSpacing": -12,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container42",
+                "X": 55,
+                "Y": 165,
+                "Width": 50,
+                "Height": 50,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "gridbox42",
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea42",
+                    "Width": 50,
+                    "Height": 50,
+                    "TextId": "__SingleUse_Z498",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "LineSpacing": -12,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container41",
+                "Y": 165,
+                "Width": 50,
+                "Height": 50,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "gridbox41",
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea41",
+                    "Width": 50,
+                    "Height": 50,
+                    "TextId": "__SingleUse_TXPK",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "LineSpacing": -12,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container34",
+                "X": 165,
+                "Y": 110,
+                "Width": 50,
+                "Height": 50,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "gridbox34",
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea34",
+                    "Width": 50,
+                    "Height": 50,
+                    "TextId": "__SingleUse_2NDX",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "LineSpacing": -12,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container33",
+                "X": 110,
+                "Y": 110,
+                "Width": 50,
+                "Height": 50,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "gridbox33",
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea33",
+                    "Width": 50,
+                    "Height": 50,
+                    "TextId": "__SingleUse_99LL",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "LineSpacing": -12,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container32",
+                "X": 55,
+                "Y": 110,
+                "Width": 50,
+                "Height": 50,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "gridbox32",
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea32",
+                    "Width": 50,
+                    "Height": 50,
+                    "TextId": "__SingleUse_A9O3",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "LineSpacing": -12,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container31",
+                "Y": 110,
+                "Width": 50,
+                "Height": 50,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "gridbox31",
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea31",
+                    "Width": 50,
+                    "Height": 50,
+                    "TextId": "__SingleUse_P0HA",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "LineSpacing": -12,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container24",
+                "X": 165,
+                "Y": 55,
+                "Width": 50,
+                "Height": 50,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "gridbox24",
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea24",
+                    "Width": 50,
+                    "Height": 50,
+                    "TextId": "__SingleUse_U8I9",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "LineSpacing": -12,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container23",
+                "X": 110,
+                "Y": 55,
+                "Width": 50,
+                "Height": 50,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "gridbox23",
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea23",
+                    "Width": 50,
+                    "Height": 50,
+                    "TextId": "__SingleUse_HIER",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "LineSpacing": -12,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container22",
+                "X": 55,
+                "Y": 55,
+                "Width": 50,
+                "Height": 50,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "gridbox22",
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea22",
+                    "Width": 50,
+                    "Height": 50,
+                    "TextId": "__SingleUse_X0Y4",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "LineSpacing": -12,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container21",
+                "Y": 55,
+                "Width": 50,
+                "Height": 50,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "gridbox21",
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea21",
+                    "Width": 50,
+                    "Height": 50,
+                    "TextId": "__SingleUse_37YO",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "LineSpacing": -12,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container14",
+                "X": 165,
+                "Width": 50,
+                "Height": 50,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "gridbox14",
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea14",
+                    "Width": 50,
+                    "Height": 50,
+                    "TextId": "__SingleUse_32N0",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "LineSpacing": -12,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container13",
+                "X": 110,
+                "Width": 50,
+                "Height": 50,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "gridbox13",
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea13",
+                    "Width": 50,
+                    "Height": 50,
+                    "TextId": "__SingleUse_IUS1",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "LineSpacing": -12,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container12",
+                "X": 55,
+                "Width": 50,
+                "Height": 50,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "gridbox12",
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea12",
+                    "Width": 50,
+                    "Height": 50,
+                    "TextId": "__SingleUse_0QCY",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "LineSpacing": -12,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container11",
+                "Width": 50,
+                "Height": 50,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "gridbox11",
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea11",
+                    "Width": 50,
+                    "Height": 50,
+                    "TextId": "__SingleUse_YO4U",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "LineSpacing": -12,
+                    "Wildcard1": {
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    },
+                    "WideTextAction": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Endcontainer",
+            "X": -5,
+            "Y": 89,
+            "Width": 245,
+            "Height": 169,
+            "Visible": false,
+            "Components": [
+              {
+                "Type": "Image",
+                "Name": "image1",
+                "X": 20,
+                "Y": 12,
+                "Width": 214,
+                "Height": 150,
+                "RelativeFilename": "__generated\\alternate_theme_images_containers_small_wide_outlined_light.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "ScoreText",
+                "X": 104,
+                "Y": 22,
+                "Width": 47,
+                "Height": 18,
+                "TextId": "__SingleUse_T90H",
+                "TextRotation": "0",
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "YourScoreText",
+                "X": 43,
+                "Y": 71,
+                "Width": 165,
+                "Height": 32,
+                "TextId": "__SingleUse_PKX4",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "UseBuffer": true,
+                  "BufferSize": 16
+                }
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "CloseButton",
+                "X": 107,
+                "Y": 116,
+                "Width": 36,
+                "Height": 36,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 1,
+                    "Y": 1,
+                    "IconReleased": "__generated\\icon_theme_images_navigation_close_36_36_000405.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_action_done_36_36_E8F6FB.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\micro_outline_disabled.json",
+                    "ImageReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_disabled.png",
+                    "ImagePressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_disabled.png"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Resetcontainer",
+            "X": -5,
+            "Y": 89,
+            "Width": 245,
+            "Height": 169,
+            "Visible": false,
+            "Components": [
+              {
+                "Type": "Image",
+                "Name": "image1_1",
+                "X": 20,
+                "Y": 12,
+                "Width": 214,
+                "Height": 150,
+                "RelativeFilename": "__generated\\alternate_theme_images_containers_small_wide_outlined_light.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "Text_1",
+                "X": 37,
+                "Y": 22,
+                "Width": 195,
+                "Height": 18,
+                "TextId": "__SingleUse_6XTC",
+                "TextRotation": "0",
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "ScoreText_1",
+                "X": 43,
+                "Y": 71,
+                "Width": 165,
+                "Height": 32,
+                "TextId": "__SingleUse_0PZJ",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "UseBuffer": true,
+                  "BufferSize": 16
+                }
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "NoButton",
+                "X": 137,
+                "Y": 116,
+                "Width": 36,
+                "Height": 36,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 1,
+                    "Y": 1,
+                    "IconReleased": "__generated\\icon_theme_images_navigation_close_36_36_000405.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_action_done_36_36_E8F6FB.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\micro_outline_disabled.json",
+                    "ImageReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_disabled.png",
+                    "ImagePressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_disabled.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "YesButton",
+                "X": 81,
+                "Y": 116,
+                "Width": 36,
+                "Height": 36,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 1,
+                    "Y": 1,
+                    "IconReleased": "__generated\\icon_theme_images_action_done_36_36_000405.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_action_done_36_36_E8F6FB.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\micro_outline_disabled.json",
+                    "ImageReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_disabled.png",
+                    "ImagePressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_disabled.png"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "ScoreRealTimecontainer",
+            "Y": 45,
+            "Width": 94,
+            "Height": 50,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "box2_1",
+                "X": 13,
+                "Y": 6,
+                "Width": 81,
+                "Height": 36,
+                "Color": {
+                  "Red": 52,
+                  "Green": 52,
+                  "Blue": 62
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "ScoreRealTimeText",
+                "X": 37,
+                "Y": 6,
+                "Width": 32,
+                "Height": 12,
+                "TextId": "__SingleUse_BJIP",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "currentScoreText",
+                "X": 13,
+                "Y": 21,
+                "Width": 81,
+                "Height": 15,
+                "TextId": "__SingleUse_ZDU0",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 250,
+                  "Green": 250,
+                  "Blue": 250
+                },
+                "Wildcard1": {
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                },
+                "WideTextAction": 1
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "HighScorecontainer",
+            "X": 136,
+            "Y": 47,
+            "Width": 104,
+            "Height": 48,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "box2_2",
+                "X": 10,
+                "Y": 4,
+                "Width": 81,
+                "Height": 36,
+                "Color": {
+                  "Red": 52,
+                  "Green": 52,
+                  "Blue": 62
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "HighScoreText",
+                "X": 20,
+                "Y": 4,
+                "Width": 60,
+                "Height": 36,
+                "TextId": "__SingleUse_L3Y8",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "showHighScore",
+                "X": 10,
+                "Y": 19,
+                "Width": 81,
+                "Height": 15,
+                "TextId": "__SingleUse_Q7TW",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 250,
+                  "Green": 250,
+                  "Blue": 250
+                },
+                "Wildcard1": {
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "BackButton",
+            "X": 13,
+            "Y": 5,
+            "Width": 40,
+            "Height": 40,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "IconReleased": "__generated\\icon_theme_images_navigation_arrow_back_40_40_E8F6FB.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_40_40_E8F6FB.svg.png"
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "ResetButton",
+            "X": 186,
+            "Y": 7,
+            "Width": 40,
+            "Height": 40,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "IconReleased": "__generated\\icon_theme_images_navigation_refresh_40_40_E8F6FB.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_40_40_E8F6FB.svg.png"
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "saveGameContainer",
+            "X": -10,
+            "Y": 89,
+            "Width": 245,
+            "Height": 169,
+            "Visible": false,
+            "Components": [
+              {
+                "Type": "Image",
+                "Name": "image1_1_1",
+                "X": 20,
+                "Y": 12,
+                "Width": 214,
+                "Height": 150,
+                "RelativeFilename": "__generated\\alternate_theme_images_containers_small_wide_outlined_light.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "Text_1_1",
+                "X": 37,
+                "Y": 22,
+                "Width": 188,
+                "Height": 18,
+                "TextId": "__SingleUse_DMK3",
+                "TextRotation": "0",
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "ScoreText_1_1",
+                "X": 43,
+                "Y": 71,
+                "Width": 165,
+                "Height": 32,
+                "TextId": "__SingleUse_77IE",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "UseBuffer": true,
+                  "BufferSize": 16
+                }
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "NoButtonSave",
+                "X": 137,
+                "Y": 116,
+                "Width": 36,
+                "Height": 36,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 1,
+                    "Y": 1,
+                    "IconReleased": "__generated\\icon_theme_images_navigation_close_36_36_000405.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_action_done_36_36_E8F6FB.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\micro_outline_disabled.json",
+                    "ImageReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_disabled.png",
+                    "ImagePressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_disabled.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "YesButtonSave",
+                "X": 81,
+                "Y": 116,
+                "Width": 36,
+                "Height": 36,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 1,
+                    "Y": 1,
+                    "IconReleased": "__generated\\icon_theme_images_action_done_36_36_000405.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_action_done_36_36_E8F6FB.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\micro_outline_disabled.json",
+                    "ImageReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_disabled.png",
+                    "ImagePressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_outline_disabled.png"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Click_Back_Button",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "BackButton"
+            },
+            "Action": {
+              "Type": "ActionShow",
+              "ActionComponent": "saveGameContainer"
+            }
+          },
+          {
+            "InteractionName": "Click_Reset_Button",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "ResetButton"
+            },
+            "Action": {
+              "Type": "ActionShow",
+              "ActionComponent": "Resetcontainer"
+            }
+          },
+          {
+            "InteractionName": "Click_No_Button",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "NoButton"
+            },
+            "Action": {
+              "Type": "ActionHide",
+              "ActionComponent": "Resetcontainer"
+            }
+          },
+          {
+            "InteractionName": "Click_Yes_Button_1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "YesButton"
+            },
+            "Action": {
+              "Type": "ActionHide",
+              "ActionComponent": "Resetcontainer"
+            }
+          },
+          {
+            "InteractionName": "Click_Yes_Button_2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "YesButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "tinhDiem"
+            }
+          },
+          {
+            "InteractionName": "Click_Close_Button_1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "CloseButton"
+            },
+            "Action": {
+              "Type": "ActionHide",
+              "ActionComponent": "Endcontainer"
+            }
+          },
+          {
+            "InteractionName": "Click_Yes_Button_3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "YesButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "khoitaogame"
+            }
+          },
+          {
+            "InteractionName": "Click_Close_Button_2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "CloseButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "khoitaogame"
+            }
+          },
+          {
+            "InteractionName": "khoitaogame",
+            "Trigger": {
+              "Type": "TriggerScreenTransitionBegins"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "khoitaoGame"
+            }
+          },
+          {
+            "InteractionName": "Yes_Button_Save",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "YesButtonSave"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "xuLyYesButtonSave"
+            }
+          },
+          {
+            "InteractionName": "No_Button_Save",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "NoButtonSave"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "xuLyNoButtonSave"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "PRJ_2048_20252",
+    "Resolution": {
+      "Width": 240,
+      "Height": 320
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "HomeScreen",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 240,
+        "Height": 320
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommandOverride": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommandOverride": "make -f ../gcc/Makefile flash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Portrait",
+    "Family": "STM32F4",
+    "SubFamily": "STM32F429/439",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m4",
+    "ProjectFile": "../STM32F429I_DISCO_REV_D01.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": [
+      "CWRVector",
+      "VectorFonts"
+    ]
+  },
+  "Version": "4.25.0",
+  "CreatedBy": "4.25.0"
+}
