@@ -152,12 +152,12 @@ uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communic
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */
 
 //Thêm biến cho joystick
-volatile uint8_t newStatus=0;// trạng thái của joystick
+volatile uint8_t newStatus=0;	// trạng thái của joystick 1R 2L 3U 4D
 volatile uint8_t oldStatus=0;
 
-uint16_t adc_buffer[2];// lưu data của ADC6
-uint16_t joyStick_TamO=2700;
-uint16_t joyStick_kc=1000;
+uint16_t adc_buffer[2];			// lưu data của ADC
+uint16_t joyStick_TamO=2700;  	// Giá trị chuẩn
+uint16_t joyStick_kc=1000;		// ngưỡng lệch
 
 // Buffer de gui toa do joystick qua UART1 len PC
 char uartTxBuffer[32];
@@ -766,7 +766,6 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
     if(hadc->Instance == ADC1) {
     	uint16_t x_value = adc_buffer[0];  // Giá trị từ PC3
@@ -810,31 +809,14 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
 
     }
 }
-/* ==================== LUU DIEM CAO NHAT VAO FLASH NOI BO ====================
-   Dung 1 sector Flash con trong cua chip STM32F429 de luu diem cao nhat,
-   giup diem song sot qua reset / mat dien (khong can EEPROM ngoai).
-
-   CANH BAO QUAN TRONG truoc khi build & nap:
-   - STM32F429ZIT6 (tren board DISC1) co 2MB Flash, chia thanh 2 bank,
-     moi bank giong nhu chip 1MB: sector 0-3 (16KB), sector 4 (64KB),
-     sector 5-11 (128KB) la Bank1 (0x08000000); sector 12-23 (lap lai
-     cau truc tren) la Bank2, bat dau tu 0x08100000.
-   - Chuong trinh TouchGFX thuong chi nam trong Bank1 (duoi 1MB), nen
-     Sector 23 (sector cuoi cung, 128KB, dia chi 0x081E0000) thuong la
-     vung TRONG, an toan de dung.
-   - BAN VAN NEN: mo file .map sau khi build (hoac muc Memory trong
-     CubeIDE) de xac nhan khong co code/asset nao dat o dia chi nay
-     truoc khi nap xuong board, tranh ghi de len chuong trinh.
-   - Neu chip cua ban la ban 1MB hoac cau hinh single-bank khac, hay
-     doi HIGHSCORE_FLASH_ADDR/HIGHSCORE_FLASH_SECTOR cho phu hop
-     (vi du dung Sector 11 / 0x080E0000 cho chip 1MB). */
+/* ==================== LUU DIEM CAO NHAT VAO FLASH NOI BO ==================== */
 #define HIGHSCORE_FLASH_ADDR   ((uint32_t)0x081E0000)
 #define HIGHSCORE_FLASH_SECTOR FLASH_SECTOR_23
 
 uint32_t Flash_ReadHighScore(void)
 {
-	uint32_t value = *(volatile uint32_t*)HIGHSCORE_FLASH_ADDR;
-	if(value == 0xFFFFFFFF) // Flash chua tung duoc ghi (trang thai sau khi erase)
+	uint32_t value = *(volatile uint32_t*)HIGHSCORE_FLASH_ADDR; // đọc trực tiếp từ địa chỉ flash
+	if(value == 0xFFFFFFFF) // Flash chưa được ghi
 	{
 		return 0;
 	}
@@ -846,20 +828,20 @@ void Flash_SaveHighScore(uint32_t score)
 	FLASH_EraseInitTypeDef eraseInit;
 	uint32_t sectorError = 0;
 
-	HAL_FLASH_Unlock();
+	HAL_FLASH_Unlock(); // mở khóa flash
 
 	__HAL_FLASH_CLEAR_FLAG(FLASH_FLAG_EOP | FLASH_FLAG_OPERR | FLASH_FLAG_WRPERR |
 	                        FLASH_FLAG_PGAERR | FLASH_FLAG_PGPERR | FLASH_FLAG_PGSERR);
 
-	// phai erase ca sector truoc khi ghi (dac diem cua Flash NOR)
+	//Xóa sector trước khi ghi vì Flash không thể ghi đè
 	eraseInit.TypeErase    = FLASH_TYPEERASE_SECTORS;
 	eraseInit.Sector       = HIGHSCORE_FLASH_SECTOR;
 	eraseInit.NbSectors    = 1;
-	eraseInit.VoltageRange = FLASH_VOLTAGE_RANGE_3; // board chay 3.3V => VDD 2.7V-3.6V
+	eraseInit.VoltageRange = FLASH_VOLTAGE_RANGE_3; //3.3V => VDD 2.7V-3.6V
 
 	if(HAL_FLASHEx_Erase(&eraseInit, &sectorError) == HAL_OK)
 	{
-		HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, HIGHSCORE_FLASH_ADDR, score);
+		HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, HIGHSCORE_FLASH_ADDR, score); // ghi điểm vào bộ Flash
 	}
 
 	HAL_FLASH_Lock();
@@ -1211,15 +1193,14 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
 	for(;;) // chạy DMS
 	{
-	      HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buffer, 2);
-	      osDelay(20);
-	      HAL_ADC_Stop_DMA(&hadc1);
-
+	    HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buffer, 2);
+	    osDelay(20);
+	    HAL_ADC_Stop_DMA(&hadc1);
 
 	    int len = snprintf(uartTxBuffer, sizeof(uartTxBuffer), "X:%u Y:%u\r\n", adc_buffer[0], adc_buffer[1]);
     	HAL_UART_Transmit(&huart1, (uint8_t*)uartTxBuffer, len, 10);
 
-	      osDelay(100);
+	    osDelay(100);
 	}
   /* USER CODE END 5 */
 }

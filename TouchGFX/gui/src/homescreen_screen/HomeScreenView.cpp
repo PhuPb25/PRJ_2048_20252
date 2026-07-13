@@ -18,7 +18,7 @@ void HomeScreenView::tearDownScreen()
 
 void HomeScreenView::getHighScore()
 {
-	uint32_t x = presenter->getHighScore();
-	Unicode::snprintf(ScoreTextBuffer, 16 , "%u", x);
+	uint32_t x = presenter->getHighScore(); // lấy điểm cao nhất từ Presenter
+	Unicode::snprintf(ScoreTextBuffer, 16 , "%u", x); // hiển thị điểm cao nhất ra màn hình HomeScreen
 	ScoreText.invalidate();
 }

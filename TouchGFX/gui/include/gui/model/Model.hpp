@@ -13,28 +13,28 @@ public:
         modelListener = listener;
     }
 
-    void saveHighestScore(uint32_t highestscore) ;// lưu điểm cao nhất
-    uint32_t getHighScore() ;// lấy điểm cao nhất (Từ View gọi ->presenter-> Model -> View
+    void saveHighestScore(uint32_t highestscore) ;// lưu lại điểm cao nhất
+    uint32_t getHighScore() ;// lấy điểm cao nhất (Từ View gọi -> presenter -> Model -> View)
 
-    // luu/phuc hoi trang thai ban co dang choi, de khi back ve Home roi vao lai
-    // PlayScreen thi tiep tuc duoc game cu thay vi luon bi tao moi
+    // Lưu/ phục hồi trạng thái game đang chời
+    // Khi vào lại có thế tiếp tục chơi thay vì tạo game cũ
     void saveGameState(uint32_t grid[4][4], uint32_t score);
-    bool loadGameState(uint32_t grid[4][4], uint32_t& score); // tra false neu chua co game nao duoc luu
+    bool loadGameState(uint32_t grid[4][4], uint32_t& score); // trả về False nếu không có game nào được lưu
 
-    // goi khi roi PlayScreen MA van vua ket thuc (Game Over) - xoa co "co game da luu" de
-    // lan sau vao lai PlayScreen se la 1 GAME MOI, khong phuc hoi lai ban co da chet (het nuoc di)
+    // Gọi khi rời PlayScreen khi rời đi không muốn lưu game
+    // Khi vào lại game sẽ là một game mới
     void clearGameState();
 
     void tick();
 protected:
     ModelListener* modelListener;
 
-    uint32_t highestScore = 2; //lưu điểm cao nhất
+    uint32_t highestScore = 0; // Điểm cao nhất
 
-    // du lieu game dang choi (luu khi roi PlayScreen, phuc hoi khi vao lai)
-    uint32_t savedGrid[4][4] = {0};
-    uint32_t savedScore = 0;
-    bool hasSavedGame = false;
+    //dư liệu game khi đang chơi, lưu lại khi rời PlayScreen, Khôi phục khi vào lại
+    uint32_t savedGrid[4][4] = {0}; // lưu grid
+    uint32_t savedScore = 0; // lưu điểm
+    bool hasSavedGame = false; // lưu trạng thái
 };
 
 #endif // MODEL_HPP

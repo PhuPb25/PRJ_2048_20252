@@ -3,7 +3,7 @@
 #include <cstdint>
 #include <cstring> // cho memcpy
 
-// các hàm đọc/ghi Flash nội bộ, được cài đặt trong main.c (USER CODE BEGIN 4)
+// Các hàm đọc ghi Flash nội bộ được tạo ra trong main USER CODE 4
 extern "C"
 {
 	uint32_t Flash_ReadHighScore(void);
@@ -12,7 +12,7 @@ extern "C"
 
 Model::Model() : modelListener(0)
 {
-	highestScore = 0; // đọc điểm cao nhất đã lưu trong Flash khi khởi động (sống sót qua reset/mất điện)
+	highestScore = 0; // Điểm cao nhất hiện tại khởi tạo là 0 điểm
 }
 
 void Model::tick()
@@ -22,7 +22,7 @@ void Model::tick()
 
 void Model::saveHighestScore(uint32_t score)
 {
-	if(score > highestScore) // chỉ ghi Flash khi có điểm cao MỚI, tránh ghi liên tục gây mòn Flash
+	if(score > highestScore) //chi ghi vào Flash khi có điểm cao hơn
 	{
 		highestScore = score;
 		Flash_SaveHighScore(highestScore);
@@ -30,28 +30,26 @@ void Model::saveHighestScore(uint32_t score)
 }
 uint32_t Model::getHighScore()
 {
-	return highestScore;
+	return highestScore; // Trả về điểm cao nhất
 }
 
 void Model::saveGameState(uint32_t grid[4][4], uint32_t score)
 {
-	memcpy(savedGrid, grid, sizeof(savedGrid));
-	savedScore = score;
-	hasSavedGame = true;
+	memcpy(savedGrid, grid, sizeof(savedGrid)); // lưu lại grid hiện tại
+	savedScore = score; // lưu lại điểm hiện tại
+	hasSavedGame = true; // đặt cờ là đã lưu
 }
 
 bool Model::loadGameState(uint32_t grid[4][4], uint32_t& score)
 {
-	if(!hasSavedGame) return false;
-	memcpy(grid, savedGrid, sizeof(savedGrid));
-	score = savedScore;
+	if(!hasSavedGame) return false; // nếu chưa save thì không có dữ liệu
+	memcpy(grid, savedGrid, sizeof(savedGrid)); // khôi phục grid
+	score = savedScore; // khôi phục điểm
 	return true;
 }
 
 void Model::clearGameState()
 {
-	// chi can tat co nay, KHONG can xoa savedGrid/savedScore (du lieu cu se bi
-	// ghi de boi lan saveGameState() hop le tiep theo, hoac khong bao gio duoc
-	// doc lai vi loadGameState() da tra false ngay tu dau)
+	// xóa trang thái lưu game
 	hasSavedGame = false;
 }

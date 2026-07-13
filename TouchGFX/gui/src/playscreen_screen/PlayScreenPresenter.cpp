@@ -9,17 +9,16 @@ PlayScreenPresenter::PlayScreenPresenter(PlayScreenView& v)
 
 void PlayScreenPresenter::activate()
 {
-	// activate() chay SAU khi model da duoc bind vao presenter, nen day moi la noi
-	// an toan de goi model->loadGameState() (khac voi setupScreen(), luc do model co the chua bind).
+	// activate chạy sau khi màn hình Play đã được active
 	uint32_t loadedGrid[4][4];
 	uint32_t loadedScore = 0;
-	if(loadGameState(loadedGrid, loadedScore))
+	if(loadGameState(loadedGrid, loadedScore)) // kiểm tra xem có game đã lưu không
 	{
-		view.restoreGame(loadedGrid, loadedScore); // co game da luu => phuc hoi
+		view.restoreGame(loadedGrid, loadedScore); // Load lại game cũ
 	}
 	else
 	{
-		view.khoitaogame(); // chua co game nao duoc luu => bat dau game moi
+		view.khoitaogame(); // Khơi tạo game mới nếu không có game cũ
 	}
 }
 
@@ -33,26 +32,28 @@ int PlayScreenPresenter::getHighScore()
         return model->getHighScore();
 }
 
-void PlayScreenPresenter::saveHighScore(uint32_t score)// lưu điểm
+void PlayScreenPresenter::saveHighScore(uint32_t score) // Lưu điểm cao nhất
 {
-	if(score > (model->getHighScore()))
+	if(score > (model->getHighScore())) // gọi xuống lớp Model
 	{
 		model->saveHighestScore(score);
 	}
 }
 
-// luu/phuc hoi trang thai ban co dang choi, cau noi View <-> Model
+// Lưu trạng thái game đang chời
 void PlayScreenPresenter::saveGameState(uint32_t grid[4][4], uint32_t score)
 {
-	model->saveGameState(grid, score);
+	model->saveGameState(grid, score); // gọi xuống Model
 }
 
+// Khôi phục trang thái game đang chơi
 bool PlayScreenPresenter::loadGameState(uint32_t grid[4][4], uint32_t& score)
 {
-	return model->loadGameState(grid, score);
+	return model->loadGameState(grid, score); // Gọi xuống Model
 }
 
+// Xóa trang thái lưu
 void PlayScreenPresenter::clearGameState()
 {
-	model->clearGameState();
+	model->clearGameState(); // Gọi xuống Model
 }

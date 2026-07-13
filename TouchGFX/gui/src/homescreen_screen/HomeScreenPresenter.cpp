@@ -9,15 +9,8 @@ HomeScreenPresenter::HomeScreenPresenter(HomeScreenView& v)
 
 void HomeScreenPresenter::activate()
 {
-	// activate() chay SAU khi Model da duoc bind vao Presenter (xem giai thich tuong tu
-	// trong PlayScreenPresenter::activate()), nen day moi la noi AN TOAN de goi ham can
-	// truy cap model->getHighScore() - KHONG goi trong View::setupScreen() vi luc do model
-	// co the chua bind, gay truy cap con tro null.
-	//
-	// Goi o day moi lan vao Home dam bao diem cao nhat luon duoc lam moi: vd vua choi xong
-	// 1 van lap ky luc moi trong PlayScreen, quay ve Home se thay ngay so moi, khong bi
-	// "dung" o gia tri cu.
-	view.getHighScore();
+	// activate được gọi sau khi Model được Bind vào Presenter
+	view.getHighScore(); // gọi để cập nhật điểm cao nhât lên giao diện HomeScreen
 }
 
 void HomeScreenPresenter::deactivate()
@@ -27,5 +20,5 @@ void HomeScreenPresenter::deactivate()
 
 uint32_t HomeScreenPresenter::getHighScore()
 {
-	return model->getHighScore();
+	return model->getHighScore(); // gọi xuống Model để lấy điểm cao nhất
 }

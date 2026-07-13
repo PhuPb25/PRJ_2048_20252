@@ -29,13 +29,15 @@ public:
 
     void saveHighScore(uint32_t score);// lưu điểm
 
-    // luu/phuc hoi trang thai ban co dang choi, dung khi quay lai PlayScreen
+    // Lưu/ Phục hồi trạng thái khi rời màn hình PlayScreen
+    // Khi quay lại tiếp tục màn chơi cũ
     void saveGameState(uint32_t grid[4][4], uint32_t score);
     bool loadGameState(uint32_t grid[4][4], uint32_t& score);
 
     int getHighScore();
-    // goi khi roi PlayScreen ma van da ket thuc (Game Over), de KHONG luu lai
-    // ban co da chet - lan sau vao lai se la game moi
+
+    // Gọi khi rời PlayScreen khi rời đi không muốn lưu game
+    // Khi quay trở lại sẽ là màn hình game mới
     void clearGameState();
 private:
     PlayScreenPresenter();
