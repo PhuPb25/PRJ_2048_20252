@@ -7,12 +7,12 @@
 extern "C"
 {
 	uint32_t Flash_ReadHighScore(void);
-	void Flash_SaveHighScore(uint32_t score);
+	uint8_t Flash_SaveHighScore(uint32_t score);
 }
 
 Model::Model() : modelListener(0)
 {
-	highestScore = 0; // Điểm cao nhất hiện tại khởi tạo là 0 điểm
+	highestScore = Flash_ReadHighScore(); // Điểm cao nhất hiện tại khởi tạo là 0 điểm
 }
 
 void Model::tick()
@@ -22,12 +22,24 @@ void Model::tick()
 
 void Model::saveHighestScore(uint32_t score)
 {
-	if(score > highestScore) //chi ghi vào Flash khi có điểm cao hơn
+	if(score > highestScore)
 	{
 		highestScore = score;
-		Flash_SaveHighScore(highestScore);
+		highScoreDirty = true;   // danh dau can ghi Flash, NHUNG chua ghi ngay
 	}
 }
+
+void Model::commitHighScoreToFlash()
+{
+	if(!highScoreDirty) return;   // khong co gi moi -> tranh erase Flash vo ich (mon Flash)
+
+	if(Flash_SaveHighScore(highestScore))
+	{
+		highScoreDirty = false;
+	}
+	// neu ghi that bai: giu highScoreDirty = true de thu lai lan sau
+}
+
 uint32_t Model::getHighScore()
 {
 	return highestScore; // Trả về điểm cao nhất
