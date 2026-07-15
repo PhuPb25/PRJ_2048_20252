@@ -22,19 +22,27 @@ void PlayScreenPresenter::activate()
 	}
 }
 
-void PlayScreenPresenter::deactivate()
+void PlayScreenPresenter::commitHighScore()
 {
-
+	model->commitHighScoreToFlash();
 }
 
-int PlayScreenPresenter::getHighScore()
+void PlayScreenPresenter::deactivate()
+{
+	// deactivate() chay SAU khi man hinh da duoc tear down va TouchGFX khong con
+	// ve PlayScreen nua => day la thoi diem an toan nhat de erase/ghi Flash
+	// (van con blocking, nhung khong lam mat frame cua man hinh dang hien thi).
+	commitHighScore();
+}
+
+uint32_t PlayScreenPresenter::getHighScore()
 {
         return model->getHighScore();
 }
 
 void PlayScreenPresenter::saveHighScore(uint32_t score) // Lưu điểm cao nhất
 {
-	if(score > (model->getHighScore())) // gọi xuống lớp Model
+	if(score > (model->getHighScore())) 
 	{
 		model->saveHighestScore(score);
 	}

@@ -34,7 +34,8 @@ public:
     void saveGameState(uint32_t grid[4][4], uint32_t score);
     bool loadGameState(uint32_t grid[4][4], uint32_t& score);
 
-    int getHighScore();
+    void commitHighScore();
+    uint32_t getHighScore();
 
     // Gọi khi rời PlayScreen khi rời đi không muốn lưu game
     // Khi quay trở lại sẽ là màn hình game mới
