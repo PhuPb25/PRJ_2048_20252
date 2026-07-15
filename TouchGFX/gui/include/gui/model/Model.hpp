@@ -15,8 +15,9 @@ public:
 
     void saveHighestScore(uint32_t highestscore) ;// lưu lại điểm cao nhất
     uint32_t getHighScore() ;// lấy điểm cao nhất (Từ View gọi -> presenter -> Model -> View)
+    void commitHighScoreToFlash(); // Ghi điểm cao nhất vào Flash
 
-    // Lưu/ phục hồi trạng thái game đang chời
+    // Lưu/phục hồi trạng thái game đang chời
     // Khi vào lại có thế tiếp tục chơi thay vì tạo game cũ
     void saveGameState(uint32_t grid[4][4], uint32_t score);
     bool loadGameState(uint32_t grid[4][4], uint32_t& score); // trả về False nếu không có game nào được lưu
@@ -30,7 +31,7 @@ protected:
     ModelListener* modelListener;
 
     uint32_t highestScore = 0; // Điểm cao nhất
-
+    bool highScoreDirty = false;  // true khi highestScore trong RAM da moi hon Flash
     //dư liệu game khi đang chơi, lưu lại khi rời PlayScreen, Khôi phục khi vào lại
     uint32_t savedGrid[4][4] = {0}; // lưu grid
     uint32_t savedScore = 0; // lưu điểm
