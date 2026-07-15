@@ -823,28 +823,32 @@ uint32_t Flash_ReadHighScore(void)
 	return value;
 }
 
-void Flash_SaveHighScore(uint32_t score)
+uint8_t Flash_SaveHighScore(uint32_t score)   // doi kieu tra ve: uint8_t (1 = OK, 0 = FAIL)
 {
 	FLASH_EraseInitTypeDef eraseInit;
 	uint32_t sectorError = 0;
+	uint8_t ok = 0;
 
-	HAL_FLASH_Unlock(); // mở khóa flash
+	HAL_FLASH_Unlock();
 
 	__HAL_FLASH_CLEAR_FLAG(FLASH_FLAG_EOP | FLASH_FLAG_OPERR | FLASH_FLAG_WRPERR |
 	                        FLASH_FLAG_PGAERR | FLASH_FLAG_PGPERR | FLASH_FLAG_PGSERR);
 
-	//Xóa sector trước khi ghi vì Flash không thể ghi đè
 	eraseInit.TypeErase    = FLASH_TYPEERASE_SECTORS;
 	eraseInit.Sector       = HIGHSCORE_FLASH_SECTOR;
 	eraseInit.NbSectors    = 1;
-	eraseInit.VoltageRange = FLASH_VOLTAGE_RANGE_3; //3.3V => VDD 2.7V-3.6V
+	eraseInit.VoltageRange = FLASH_VOLTAGE_RANGE_3;
 
 	if(HAL_FLASHEx_Erase(&eraseInit, &sectorError) == HAL_OK)
 	{
-		HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, HIGHSCORE_FLASH_ADDR, score); // ghi điểm vào bộ Flash
+		if(HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, HIGHSCORE_FLASH_ADDR, score) == HAL_OK)
+		{
+			ok = 1;
+		}
 	}
 
 	HAL_FLASH_Lock();
+	return ok;   // Model co the dung gia tri nay de biet Flash co that su duoc ghi khong
 }
 /* ================== KET THUC PHAN LUU DIEM VAO FLASH ================== */
 
