@@ -29,7 +29,7 @@ protected:
     uint8_t newSta = 0; //
     uint8_t oldSta = 0;
     uint8_t batXuLyLuoi=0; // 0 thì là chưa làm gì, 1 là đang chơi, 2 là kết thúc
-    uint16_t timeAnimation = 5.5;
+    uint16_t timeAnimation = 5;
 
     uint16_t lapLaiCounter = 0;                  // bo dem khoa lap lai, dung chung cho ca 2 giai doan duoi day
     static const uint16_t INITIAL_HOLD_DELAY = 30; // so tick PHAI GIU LIEN TUC (khong tha ve CENTER) truoc khi

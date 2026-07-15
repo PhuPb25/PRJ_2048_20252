@@ -791,12 +791,12 @@ void PlayScreenView::endGame() // endGame khi thua
 	Endcontainer.invalidate();
 }
 
-void PlayScreenView::updateHighestScore() // gọi tới presenter
+void PlayScreenView::updateHighestScore()
 {
-		presenter->saveHighScore(score);
+	presenter->saveHighScore(score);   // chi cap nhat RAM + danh dau dirty
 
-		Unicode::snprintf(showHighScoreBuffer, 10, "%u", presenter->getHighScore());
-		showHighScore.invalidate();
+	Unicode::snprintf(showHighScoreBuffer, 10, "%u", presenter->getHighScore());
+	showHighScore.invalidate();
 }
 
 
