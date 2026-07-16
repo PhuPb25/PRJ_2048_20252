@@ -768,8 +768,8 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
     if(hadc->Instance == ADC1) {
-    	uint16_t x_value = adc_buffer[0];  // Giá trị từ PC3
-    	uint16_t y_value = adc_buffer[1];  // Giá trị từ PA5
+    	uint16_t x_value = adc_buffer[0];  // Giá trị từ PA5
+    	uint16_t y_value = adc_buffer[1];  // Giá trị từ PC3
 
 
     	if(x_value > joyStick_TamO + joyStick_kc)  newStatus = 1; // phải
